@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { node, string } from "prop-types";
-import { spacingXlLeft, spacingXlTop } from '../../tokens/dist/spacing';
+import { spacingXlLeft, spacingXlTop, spacing3XxlTop } from '../../tokens/dist/spacing';
 
 /* Navigation
  *
@@ -30,7 +30,7 @@ Navigation.propTypes = {
 const StyledNavigation = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: ${spacing3XxlTop};
   padding-top: ${spacingXlTop};
 `;
 
