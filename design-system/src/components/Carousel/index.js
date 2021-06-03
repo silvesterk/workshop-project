@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { arrayOf, shape, string } from "prop-types";
+import { spacingSmTop, spacingBaseTop } from '../../tokens/dist/spacing';
 
 /* Carousel
  *
@@ -51,9 +52,9 @@ const StyledCarousel = styled.div`
     height: 36px;
     align-items: flex-end;
     button {
-      width: 8px;
-      height: 8px;
-      margin: 0 4px;
+      width: ${spacingBaseTop};
+      height: ${spacingBaseTop};
+      margin: 0 ${spacingSmTop};
       opacity: 0.6;
       border-radius: 50%;
     }
