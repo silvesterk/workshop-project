@@ -4,6 +4,7 @@ import Button from "../Button";
 import Icon from "../Icon";
 import { bool, string, oneOf } from "prop-types";
 import { colors, typography as t } from "tokens";
+import { spacingLgTop, spacingBaseTop, spacingXlTop, spacing2XlTop } from '../../tokens/dist/spacing';
 
 /* ProductItem
  *
@@ -71,7 +72,7 @@ const StyledProductItemImage = styled.img`
   max-width: 100%;
   max-height: 100%;
   margin-bottom: ${({ size }) =>
-    size === "big" ? "24px" : size === "small" ? "0px" : "16px"};
+    size === "big" ? spacing2XlTop : size === "small" ? "0px" : spacingLgTop};
   display: block;
   border-radius: 32px;
 `;
@@ -97,7 +98,7 @@ const StyledProductItemInfo = styled.div`
 `;
 
 const StyledProductItemDescription = styled.p`
-  margin-bottom: 8px;
+  margin-bottom: ${spacingBaseTop};
   opacity: 0.6;
   ${({ size }) => size === "small" && `order: 5;`}
 `;
@@ -128,7 +129,7 @@ const StyledProductItemName = styled.h2`
         font-weight: ${t.headline4FontWeight};
         font-style: ${t.headline4FontStyle};
         letter-spacing: ${t.headline4LetterSpacing};
-        margin-bottom: 8px;
+        margin-bottom: ${spacingBaseTop};
     `;
     } else {
       return `
@@ -141,7 +142,7 @@ const StyledProductItemName = styled.h2`
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        padding-right: 16px;
+        padding-right: ${spacingLgTop};
     `;
     }
   }}
@@ -149,7 +150,7 @@ const StyledProductItemName = styled.h2`
 
 const StyledProductItemPrice = styled.p`
   color: ${colors.primary500};
-  margin-top: 8px;
+  margin-top: ${spacingBaseTop};
   font-weight: 500;
   ${({ size }) => {
     if (size === "big") {
@@ -161,7 +162,7 @@ const StyledProductItemPrice = styled.p`
         font-style: ${t.headline2FontStyle};
         letter-spacing: ${t.headline1LetterSpacing};
         color: ${colors.primary500};
-        margin-top: 16px;`;
+        margin-top: ${spacingLgTop};`;
     } else if (size === "small") {
       return `
         color: ${colors.onBackground500}; 
