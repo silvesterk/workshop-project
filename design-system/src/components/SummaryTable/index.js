@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { string, shape, arrayOf } from "prop-types";
-
+import { spacing3XlTop, spacing2XlTop, spacingLgTop } from '../../tokens/dist/spacing';
+ 
 /* SummaryTable
  *
  * SummaryTable displays order details in a table, each row has information on name and price for each item.
@@ -48,14 +49,14 @@ SummaryTable.propTypes = {
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
-  row-gap: 16px;
+  row-gap: ${spacingLgTop};
 `;
 
 const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
-  margin: 32px 0;
+  margin: ${spacing3XlTop} 0;
 `;
 
 const StyledItemName = styled.p`
@@ -72,7 +73,7 @@ const StyledPrice = styled.div`
   font-size: 14px;
   font-weight: 700;
   font-style: normal;
-  line-height: 24px;
+  line-height: ${spacing2XlTop};
   letter-spacing: -0.3px;
   text-align: right;
 `;

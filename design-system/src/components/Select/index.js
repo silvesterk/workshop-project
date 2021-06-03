@@ -12,6 +12,7 @@ import {
   ListboxArrow,
 } from "@reach/listbox";
 import "@reach/listbox/styles.css";
+import { spacingBaseTop, spacingLgTop } from '../../tokens/dist/spacing';
 
 /* Select
  *
@@ -65,7 +66,7 @@ Select.propTypes = {
 
 export const StyledSelect = styled(Listbox)`
   > [data-reach-listbox-button] {
-    padding: 8px 16px;
+    padding: ${spacingBaseTop} ${spacingLgTop};
     font-family: "DM Sans";
     line-height: 24px;
     font-weight: bold;

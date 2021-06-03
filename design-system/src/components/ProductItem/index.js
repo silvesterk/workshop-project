@@ -4,7 +4,8 @@ import Button from "../Button";
 import Icon from "../Icon";
 import { bool, string, oneOf } from "prop-types";
 import { colors, typography as t } from "tokens";
-import { spacingLgTop, spacingBaseTop, spacingXlTop, spacing2XlTop } from '../../tokens/dist/spacing';
+import { spacingLgTop, spacingLgLeft, spacingBaseTop, spacing2XlTop } from '../../tokens/dist/spacing';
+import { radii32RadiiTopLeft } from '../../tokens/dist/radii';
 
 /* ProductItem
  *
@@ -74,7 +75,7 @@ const StyledProductItemImage = styled.img`
   margin-bottom: ${({ size }) =>
     size === "big" ? spacing2XlTop : size === "small" ? "0px" : spacingLgTop};
   display: block;
-  border-radius: 32px;
+  border-radius: ${radii32RadiiTopLeft};
 `;
 
 const StyledButton = styled(Button)`
@@ -82,7 +83,7 @@ const StyledButton = styled(Button)`
   top: 0;
   left: 0;
   z-index: 1;
-  margin: 24px;
+  margin: ${spacing2XlTop};
 `;
 
 const StyledProductItemInfo = styled.div`
@@ -92,7 +93,7 @@ const StyledProductItemInfo = styled.div`
     size == "small" &&
     `
      flex-grow: 1;
-     margin-left: 16px;
+     margin-left: ${spacingLgLeft};
      align-content: flex-start;
      max-width: 60%;`}
 `;
