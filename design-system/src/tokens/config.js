@@ -65,6 +65,13 @@ module.exports = {
             return prop.path[0] === "spacing";
           },
         },
+        {
+          destination: "radii.js",
+          format: "javascript/es6",
+          filter: function (prop) {
+            return prop.path[0] === "radii";
+          },
+        },
       ],
     },
   },
