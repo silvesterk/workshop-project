@@ -4,7 +4,7 @@
  */
 import React from "react";
 import styled from "styled-components";
-import { Button, Icon, colors } from "design-system";
+import { Button, Icon, colors, Avatar, Navigation, ProductItem } from "design-system";
 import { Link } from "react-router-dom";
 
 const data = require("../data/data.js");
@@ -13,38 +13,42 @@ const Home = () => {
   return (
     <div>
       <StyledDiv1>
-        <StyledDiv2>
-          <StyledImage1 src={data.user.avatar} />
-          <Button isOutline>
-            <Icon name="menu" />
-          </Button>
-        </StyledDiv2>
+        <Navigation
+          firstAction={<Avatar src={data.user.avatar} />}
+          lastAction={
+            <Button isOutline>
+              <Icon name="menu" />
+            </Button>
+          }
+        />
         <Styledh1>Store</Styledh1>
 
         <StyledDiv3>
           <h4>All Product</h4>
 
           <StyledDiv4>
-            <StyledButton color="transparent">
+            <Button
+              color="transparent"
+            >
               <Icon name="viewItem" width={24} height={16} />
-            </StyledButton>
-            <StyledButton color="transparent">
+            </Button>
+            <Button
+              color="transparent"
+            >
               <Icon name="viewGrid" width={24} height={16} />
-            </StyledButton>
+            </Button>
             <StyledBorder />
-            <StyledButton color="transparent">
+            <Button
+              color="transparent"
+            >
               <Icon name="filter" width={24} height={16} />
-            </StyledButton>
+            </Button>
           </StyledDiv4>
         </StyledDiv3>
         <StyledDiv5>
           {Object.entries(data.products).map(([id, item]) => {
             return (
-              <StyledLink key={id} to={`/details/${id}`}>
-                <StyledImg src={item.image} alt="" />
-                <h4>{item.name}</h4>
-                <StyledP>{item.price}</StyledP>
-              </StyledLink>
+              <ProductItem to={`/details/${id}`} key={id} name={item.name} price={item.price} image={item.image} description={item.name} />
             );
           })}
         </StyledDiv5>
