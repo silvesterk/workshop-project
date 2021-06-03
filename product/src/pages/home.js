@@ -48,7 +48,7 @@ const Home = () => {
         <StyledDiv5>
           {Object.entries(data.products).map(([id, item]) => {
             return (
-              <ProductItem to={`/details/${id}`} key={id} name={item.name} price={item.price} image={item.image} description={item.name} />
+              <ProductItem as={Link} to={`/details/${id}`} key={id} name={item.name} price={item.price} image={item.image} description={item.name} />
             );
           })}
         </StyledDiv5>
@@ -57,11 +57,6 @@ const Home = () => {
   );
 };
 
-const StyledImage1 = styled.img`
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-`;
 
 const StyledDiv1 = styled.div`
   padding: 64px 40px;
@@ -70,12 +65,6 @@ const StyledDiv1 = styled.div`
 const Styledh1 = styled.h1`
   margin-bottom: 40px;
   letter-spacing: -1.6px;
-`;
-
-const StyledDiv2 = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
 `;
 
 const StyledDiv3 = styled.div`
@@ -94,38 +83,12 @@ const StyledDiv5 = styled.div`
   gap: 32px 24px;
 `;
 
-const StyledLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-`;
 
 const StyledBorder = styled.div`
   width: 1px;
   height: 16px;
   background-color: ${colors.onSurface100};
   margin: 0 8px;
-`;
-
-const StyledImg = styled.img`
-  max-width: 100%;
-  margin-bottom: 16px;
-`;
-
-const StyledButton = styled(Button)`
-  padding: 0;
-  border: 0;
-  margin: 0 8px;
-  &:last-child {
-    margin-right: 0;
-  }
-`;
-
-const StyledP = styled.p`
-  color: ${colors.primary900};
-  font-weight: 700;
-  margin-top: 8px;
 `;
 
 export default Home;
